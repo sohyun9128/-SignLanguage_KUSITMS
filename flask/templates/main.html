@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/main.css')}}"
+    />
+
+	<!--js-->
+	<script type = "text/javascript"
+	src="{{ url_for('static', filename='js/basic.js')}}">
+	</script>
+
+	</head>
+
+<body>
+<div id=container>
+	<div id=header>
+		<img src="{{ url_for('static', filename='img/logo.png') }}" id="logo">
+		<div style="text-align:center">
+			<img src="{{ url_for('static', filename='img/name.png') }}" width="800" height="250">
+		</div>
+		<div class="text">웹 개발자가 귀찮은 관계로 너비 1366px로 알아서 맞추세요.</div>
+	</div>
+
+<!--start sidebar-->
+<div id=sidebar>
+	<h3>수피아가 배운 수화</h3>
+	<div style="padding-left:25px">
+	<table class="sidetable">
+ 		<tr class="side">
+    		<th class="side">
+				<img src="{{ url_for('static', filename='img/ㅋ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/Z.png') }}" class="sign">
+			</th>
+    		<th class="side">
+				<img src="{{ url_for('static', filename='img/ㅅ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/T.png') }}" class="sign">
+			</th>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅠ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/B.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅏ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/K.png') }}" class="sign">
+			</td>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅅ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/T.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㄹ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/F.png') }}" class="sign">
+			</td>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅣ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/L.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅏ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/K.png') }}" class="sign">
+			</td>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅈ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/W.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅇ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/D.png') }}" class="sign">
+			</td>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅡ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/M.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅎ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/G.png') }}" class="sign">
+			</td>
+  		</tr>
+  		<tr class="side">
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅁ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/A.png') }}" class="sign">
+			</td>
+    		<td class="side">
+				<img src="{{ url_for('static', filename='img/ㅐ.png') }}" class="korean">
+				<img src="{{ url_for('static', filename='img/O.png') }}" class="sign">
+			</td>
+  		</tr>
+	</table>
+	</div>
+</div>
+<!--end sidebar-->
+
+<!--start content-->
+<div id="content">
+	<div style="text-align: center;">
+
+	    <input type="button" value="사용설명서" onclick="
+	        if(this.value === '사용설명서'){
+			    this.value = '닫기';
+			    post();
+	        }
+	        else{
+			    this.value = '사용설명서';
+			    pre_post();
+	        }
+	       ">
+        <!--사용법-->
+	    <div id="forPost"></div>
+
+        <p>
+		<div id="cam">
+            <img src="{{ url_for('static', filename='img/main_image.png') }}" style="padding-top: 63px">
+        </div>
+        </p>
+    </div>
+
+		<div class="wrap">
+		<table class="table2">
+			<tr>
+				<td>
+				<button type="button" class="button" onclick="color();">시작하기</button>
+				</td>
+                <td>
+				<button type="button" class="button" onclick="predict();">예상하기</button>
+                </td>
+				<td>
+				<button type="button" class="button" onclick="output();">결과확인</button>
+				</td>
+				<td>
+				<button type="button" class="button" onclick="reset();">초기화</button>
+				</td>
+			</tr>
+		</table>
+		</div>
+
+	<p>
+	<div id="output">&nbsp;결과가 출력되는 공간입니다.</div>
+    </p>
+</div>
+
+<!-- end content-->
+<!-- start footer-->
+
+<div id="footer">
+3조 그동안 고생했습니다.<br>
+조장 : 전다운<br>
+조원-기획 : 김기현, 박혜은<br>
+조원-개발 : 김소현, 백예원, 이다빈, 이재원<br>
+인공지능 코드 보러가기 :
+<button type="button" onclick="window.location.href='{{ url_for('code')}}';">
+클릭</button>
+
+</div>
+<!-- end footer-->
+</div>
+
+</body>
+</html>
